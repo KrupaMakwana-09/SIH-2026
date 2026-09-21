@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400" width="100%" height="100%">
+  <defs>
+    <radialGradient id="archBg" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#0e0c24" />
+      <stop offset="60%" stop-color="#060510" />
+      <stop offset="100%" stop-color="#030206" />
+    </radialGradient>
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#151728" stop-opacity="0.95" />
+      <stop offset="100%" stop-color="#0a0a14" stop-opacity="0.9" />
+    </linearGradient>
+    <filter id="boxGlow" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="3" result="b" />
+      <feMerge>
+        <feMergeNode in="b" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="900" height="400" fill="url(#archBg)" rx="16" stroke="#8B5CF6" stroke-width="1.2" stroke-opacity="0.3" />
+
+  <!-- Architecture Header -->
+  <text x="450" y="36" text-anchor="middle" fill="#00F5FF" font-family="'Courier New', monospace" font-size="14" font-weight="bold" letter-spacing="3">
+    [ SYSTEM ARCHITECTURE // DISTRIBUTED RURAL HEALTH INTELLIGENCE ]
+  </text>
+  <line x1="150" y1="46" x2="750" y2="46" stroke="#00F5FF" stroke-width="0.8" stroke-opacity="0.4" />
+
+  <!-- ════════ TIER 1: CLIENT ACCESS PORTALS (Top Row) ════════ -->
+  <g transform="translate(45, 70)">
+    <!-- Box 1: Citizen Vault -->
+    <rect x="0" y="0" width="180" height="75" rx="10" fill="url(#cardGrad)" stroke="#00F5FF" stroke-width="1.2" />
+    <circle cx="16" cy="18" r="4" fill="#00F5FF" />
+    <text x="26" y="22" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="12" font-weight="bold">Citizen Health Vault</text>
+    <text x="14" y="42" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="10">EHR History • Vitals Tracker</text>
+    <text x="14" y="58" fill="#00F5FF" font-family="'Courier New', monospace" font-size="9">OTP-Gated Profile</text>
+
+    <!-- Box 2: Doctor Desk -->
+    <rect x="210" y="0" width="180" height="75" rx="10" fill="url(#cardGrad)" stroke="#8B5CF6" stroke-width="1.2" />
+    <circle cx="226" cy="18" r="4" fill="#8B5CF6" />
+    <text x="236" y="22" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="12" font-weight="bold">Doctor Desk &amp; Rx</text>
+    <text x="224" y="42" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="10">Digital Rx • OPD Roster</text>
+    <text x="224" y="58" fill="#8B5CF6" font-family="'Courier New', monospace" font-size="9">Follow-Up Sync Queue</text>
+
+    <!-- Box 3: ASHA Companion -->
+    <rect x="420" y="0" width="180" height="75" rx="10" fill="url(#cardGrad)" stroke="#00FF88" stroke-width="1.2" />
+    <circle cx="436" cy="18" r="4" fill="#00FF88" />
+    <text x="446" y="22" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="12" font-weight="bold">ASHA Field Companion</text>
+    <text x="434" y="42" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="10">Voice AI Triage • Offline Sync</text>
+    <text x="434" y="58" fill="#00FF88" font-family="'Courier New', monospace" font-size="9">IndexedDB Local Queue</text>
+
+    <!-- Box 4: CMO Command Radar -->
+    <rect x="630" y="0" width="180" height="75" rx="10" fill="url(#cardGrad)" stroke="#FF00E5" stroke-width="1.2" />
+    <circle cx="646" cy="18" r="4" fill="#FF00E5" />
+    <text x="656" y="22" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="12" font-weight="bold">CMO District Radar</text>
+    <text x="644" y="42" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="10">Outbreak Heatmap • Stockouts</text>
+    <text x="644" y="58" fill="#FF00E5" font-family="'Courier New', monospace" font-size="9">Referral Bottlenecks</text>
+  </g>
+
+  <!-- Connectors from Tier 1 to Tier 2 -->
+  <path d="M 135 145 L 135 175 L 450 175 L 450 195" fill="none" stroke="#00F5FF" stroke-width="1.2" stroke-opacity="0.5" stroke-dasharray="4,4" />
+  <path d="M 345 145 L 345 175 L 450 175" fill="none" stroke="#8B5CF6" stroke-width="1.2" stroke-opacity="0.5" stroke-dasharray="4,4" />
+  <path d="M 555 145 L 555 175 L 450 175" fill="none" stroke="#00FF88" stroke-width="1.2" stroke-opacity="0.5" stroke-dasharray="4,4" />
+  <path d="M 765 145 L 765 175 L 450 175" fill="none" stroke="#FF00E5" stroke-width="1.2" stroke-opacity="0.5" stroke-dasharray="4,4" />
+  <circle cx="450" cy="175" r="4" fill="#00FF88" filter="url(#boxGlow)" />
+
+  <!-- ════════ TIER 2: NODE.JS / EXPRESS REST API CORE (Middle) ════════ -->
+  <g transform="translate(100, 195)">
+    <rect x="0" y="0" width="700" height="85" rx="12" fill="#0b0e1e" stroke="#00F5FF" stroke-width="1.6" filter="url(#boxGlow)" />
+    
+    <!-- Title Badge -->
+    <rect x="250" y="-12" width="200" height="24" rx="12" fill="#00F5FF" />
+    <text x="350" y="4" text-anchor="middle" fill="#050509" font-family="'Inter', sans-serif" font-size="11" font-weight="900" letter-spacing="1">
+      EXPRESS.JS REST API CORE
+    </text>
+
+    <!-- Sub-engines in API -->
+    <g transform="translate(20, 24)">
+      <rect x="0" y="0" width="120" height="46" rx="6" fill="#141829" stroke="#8B5CF6" stroke-width="0.8" />
+      <text x="60" y="20" text-anchor="middle" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="10" font-weight="bold">Auth Engine</text>
+      <text x="60" y="34" text-anchor="middle" fill="#8B5CF6" font-family="'Courier New', monospace" font-size="8">JWT + Bcrypt</text>
+
+      <rect x="135" y="0" width="125" height="46" rx="6" fill="#141829" stroke="#00F5FF" stroke-width="0.8" />
+      <text x="197" y="20" text-anchor="middle" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="10" font-weight="bold">Smart Routing</text>
+      <text x="197" y="34" text-anchor="middle" fill="#00F5FF" font-family="'Courier New', monospace" font-size="8">Specialist Match</text>
+
+      <rect x="270" y="0" width="120" height="46" rx="6" fill="#141829" stroke="#00FF88" stroke-width="0.8" />
+      <text x="330" y="20" text-anchor="middle" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="10" font-weight="bold">Voice AI Parser</text>
+      <text x="330" y="34" text-anchor="middle" fill="#00FF88" font-family="'Courier New', monospace" font-size="8">Hindi / Hinglish</text>
+
+      <rect x="400" y="0" width="125" height="46" rx="6" fill="#141829" stroke="#FF00E5" stroke-width="0.8" />
+      <text x="462" y="20" text-anchor="middle" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="10" font-weight="bold">Blood &amp; NGO Hub</text>
+      <text x="462" y="34" text-anchor="middle" fill="#FF00E5" font-family="'Courier New', monospace" font-size="8">GPS Haversine</text>
+
+      <rect x="535" y="0" width="125" height="46" rx="6" fill="#141829" stroke="#F59E0B" stroke-width="0.8" />
+      <text x="597" y="20" text-anchor="middle" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="10" font-weight="bold">Follow-Up Sync</text>
+      <text x="597" y="34" text-anchor="middle" fill="#F59E0B" font-family="'Courier New', monospace" font-size="8">Dual-Record State</text>
+    </g>
+  </g>
+
+  <!-- Connectors from Tier 2 to Tier 3 -->
+  <line x1="280" y1="280" x2="280" y2="315" stroke="#00FF88" stroke-width="1.5" stroke-dasharray="3,3" />
+  <line x1="620" y1="280" x2="620" y2="315" stroke="#00F5FF" stroke-width="1.5" stroke-dasharray="3,3" />
+
+  <!-- ════════ TIER 3: DATA & INFRASTRUCTURE (Bottom Row) ════════ -->
+  <g transform="translate(100, 315)">
+    <!-- MongoDB Atlas Cloud Cluster -->
+    <rect x="0" y="0" width="330" height="65" rx="10" fill="url(#cardGrad)" stroke="#00FF88" stroke-width="1.4" />
+    <circle cx="20" cy="20" r="5" fill="#00FF88" filter="url(#boxGlow)" />
+    <text x="34" y="24" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="13" font-weight="bold">MongoDB Atlas Cloud Cluster</text>
+    <text x="20" y="45" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="10">EHR Profiles • Doctors • Facilities • Reminders • Outbreaks</text>
+
+    <!-- Google SMTP Realtime Mail Gateway -->
+    <rect x="370" y="0" width="330" height="65" rx="10" fill="url(#cardGrad)" stroke="#00F5FF" stroke-width="1.4" />
+    <circle cx="390" cy="20" r="5" fill="#00F5FF" filter="url(#boxGlow)" />
+    <text x="404" y="24" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="13" font-weight="bold">Realtime Gmail SMTP Gateway (TLS 587)</text>
+    <text x="390" y="45" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="10">Automated 6-Digit OTP Dispatches • Follow-Up Verification</text>
+  </g>
+</svg>
